@@ -1,3 +1,3 @@
 module github.com/calvarado2004/tests
 
-go 1.17
+go 1.18
