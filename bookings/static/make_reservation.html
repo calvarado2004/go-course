@@ -17,19 +17,19 @@
       font-size: 80%
     }
 
-    .room-image {
+    .room-image{
       max-width: 60%;
     }
   </style>
 
-  <title>Reserve your room now</title>
+  <title>Contact</title>
 </head>
 
 <body>
 
   <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Reserve now</a>
+      <a class="navbar-brand" href="#">Contact</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -71,39 +71,47 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-3"></div>
 
-      <div class="col-md-9">
+        <div class="col">
 
-        <h1> Search for availability.</h1>
+            <h1> Make reservation.</h1>
 
-        <form action="reservation.html" method="POST">
 
-          <div class="row row-cols-lg-auto g-3 align-items-center">
-            <div class="col">
-              <div class="form-group">
-                <label for="start_date" class="form-label">Starting Date</label>
-                <input required type="date" class="form-control" id="start_date" name="start_date"
-                  aria-describedby="startDateHelp">
-                <div id="startDateHelp" class="form-text">Enter your starting date in the form of mm/dd/yyyy.</div>
-              </div>
-            </div>
+            <form method="post" action="" class="needs-validation" novalidate>
 
-            <div class="col">
-              <div class="form-group">
-                <label for="end_date" class="form-label">Ending Date</label>
-                <input required type="date" class="form-control" id="start_date" name="start_date"
-                  aria-describedby="endDateHelp">
-                <div id="endDateHelp" class="form-text">Enter your ending date in the form of mm/dd/yyyy.</div>
-              </div>
-            </div>
+                <div class="form-group mt-9">
+
+                    <label for="first_name">First name:</label>
+                    <input type="text" name="first_name" id="first_name" class="form-control" required autocomplete="off">
+
+                </div>
+
+                <div class="form-group mt-9" >
+
+                    <label for="last_name">Last name:</label>
+                    <input type="text" name="last_name" id="last_name" class="form-control" required autocomplete="off">
+                </div>
+
+                <div class="form-group mt-9" >
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" class="form-control" required autocomplete="off">
+                </div>
+
+
+                <div class="form-group mt-9" >
+
+                    <label for="phone">Phone number:</label>
+                    <input type="phone" name="phone" id="phone" class="form-control" required autocomplete="off">
+                </div>
+
+                <hr>
+
+                <input type="submit" class="btn btn-primary" value="Make Reservation">
+
+            </form>
+    
           </div>
-
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-
-
-      </div>
 
     </div>
 
