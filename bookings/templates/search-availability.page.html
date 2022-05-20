@@ -11,8 +11,8 @@
 
         <h1> Search for availability.</h1>
 
-        <form action="reservation.html" method="GET" novalidate class="needs-validation">
-
+        <form action="/availability" method="POST" novalidate class="needs-validation">
+          <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
           <div class="row row-cols-lg-auto g-3 align-items-center" id="reservation-dates">
             <div class="col">
               <div class="form-group">
@@ -61,10 +61,13 @@
 {{end}}
 
 {{ define "js"}}
+
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/js/datepicker-full.min.js"></script>
+
 <script>
     const elem = document.getElementById('reservation-dates');
-    const rangepicker = new DateRangePicker(elem, {
-        format: "dd/mm/yyyy"
+    const rangePicker = new DateRangePicker(elem, {
+        format: "dd/mm/yyyy",
     });
 </script>
 {{ end }}
