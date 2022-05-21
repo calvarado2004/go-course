@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/calvarado2004/bookings/internal/config"
+	"github.com/calvarado2004/bookings/internal/forms"
 	"github.com/calvarado2004/bookings/internal/models"
 	"github.com/calvarado2004/bookings/internal/render"
 )
@@ -66,7 +67,13 @@ func (m *Repository) Specials(w http.ResponseWriter, r *http.Request) {
 
 func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
 
-	render.RenderTemplate(w, r, "reservation.page.html", &models.TemplateData{})
+	render.RenderTemplate(w, r, "reservation.page.html", &models.TemplateData{
+		Form: forms.New(nil),
+	})
+}
+
+func (m *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
+
 }
 
 func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
