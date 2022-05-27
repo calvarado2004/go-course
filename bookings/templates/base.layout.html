@@ -145,6 +145,18 @@
             })
         };
 
+        with (Error) {
+            notify("{{.Error}}","error")
+        };
+
+        with (Flash) {
+            notify("{{.Flash}}","success")
+        };
+
+        with (Warning) {
+            notify("{{.Warning}}","warning")
+        }
+
         function Prompt() {
 
             let toast = function (c) {
