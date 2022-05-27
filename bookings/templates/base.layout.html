@@ -94,6 +94,7 @@
 
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>
@@ -143,20 +144,21 @@
                 text: msg,
                 position: "top",
             })
+            
         };
 
-        with (Error) {
-            notify("{{.Error}}","error")
-        };
+        {{with .Error}}
+            notify("{{.}}","error")
+        {{end}}
 
-        with (Flash) {
-            notify("{{.Flash}}","success")
-        };
+        {{with .Flash}}
+            notify("{{.}}","error")
+        {{end}}
 
-        with (Warning) {
-            notify("{{.Warning}}","warning")
-        };
-
+        {{with .Warning}}
+            notify("{{.}}","error")
+        {{end}}
+        
         function Prompt() {
 
             let toast = function (c) {
