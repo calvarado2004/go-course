@@ -3,6 +3,12 @@ package handlers
 import (
 	"encoding/gob"
 	"fmt"
+	"html/template"
+	"log"
+	"net/http"
+	"path/filepath"
+	"time"
+
 	"github.com/alexedwards/scs/v2"
 	"github.com/calvarado2004/bookings/internal/config"
 	"github.com/calvarado2004/bookings/internal/models"
@@ -10,11 +16,6 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/justinas/nosurf"
-	"html/template"
-	"log"
-	"net/http"
-	"path/filepath"
-	"time"
 )
 
 var app config.AppConfig
@@ -74,7 +75,7 @@ func getRoutes() http.Handler {
 
 	return mux
 
-	return nil
+	//return nil
 }
 
 func NoSurf(next http.Handler) http.Handler {
